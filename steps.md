@@ -10,7 +10,8 @@ create virtual env \
 `pi3p install django`
 
 create django project \
-`django-admin startproject setlist_tracker .`
+`django-admin startproject setlist_tracker .` \
+pst ( dont forget the dot ".") \
 
 create data base \
 `python manage.py migrate`
@@ -25,11 +26,10 @@ folder structure should look like \
 `ls setlist_tracker`
 ```
 |-env
-|-setlist_tracker
-    |-db.sqlite3
-    |-manage.py
-    |-setlist_tracker (main project)
-    |-setlist_tracker_app (main app)
+|-db.sqlite3
+|-manage.py
+|-setlist_tracker (main project)
+|-setlist_tracker_app (main app)
 ```
 
 define models in `setlist_tracker_app/models.py`
