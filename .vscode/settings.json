@@ -1,0 +1,11 @@
+{
+    "workbench.colorTheme": "Tokyo Night",
+    "html.suggest.html5": true,
+    "[html]": {
+        "editor.foldingStrategy": "indentation",
+        "editor.detectIndentation": false,
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+    },
+    "html.format.wrapAttributes": "auto"
+}

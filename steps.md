@@ -1,16 +1,16 @@
 # Steps for django project
 
-create project folder \
-`mkdir song_tracker_project` \
-`cd song_tracker_project`
+create project folder (or just use github repo) \
+`mkdir setlist_tracker` \
+`cd setlist_tracker`
 
 create virtual env \
-`virtualenv song_tracker_env` \
-`source song_tracker/bin/activate` \
+`virtualenv env` \
+`source env/bin/activate` \
 `pi3p install django`
 
 create django project \
-`django-admin startproject song_tracker .`
+`django-admin startproject setlist_tracker .`
 
 create data base \
 `python manage.py migrate`
@@ -19,32 +19,33 @@ start server \
 `python manage.py runserver`
 
 create an app within the project \
-`python manage.py startapp song_tracker_app`
+`python manage.py startapp setlist_tracker_app`
 
 folder structure should look like \
-`ls song_tracker_project`
+`ls setlist_tracker`
 ```
-db.sqlite3
-manage.py
-song_tracker
-song_tracker_app
-song_tracker_env
+|-env
+|-setlist_tracker
+    |-db.sqlite3
+    |-manage.py
+    |-setlist_tracker (main project)
+    |-setlist_tracker_app (main app)
 ```
 
-define models in `models.py`
+define models in `setlist_tracker_app/models.py`
 
 add app to project in `settings.py`
 ```
 INSTALLED_APPS = [
     # my apps
-    'song_tracker_app'
+    'setlist_tracker_app'
 
     ...
 ]
 ```
 
 make migration files for new models \
-`python manage.py makemigrations song_tracker_app`
+`python manage.py makemigrations setlist_tracker_app`
 
 apply migrations \
 `python manage.py migrate`
@@ -70,7 +71,13 @@ urlpatterns = [
 ]
 ```
 create `urls.py` in song_tracker_app and add home page url pattern \
+
+
 create new function in `song_tracker_app/views.py` to map url patterns to functions and templates \
+
+
 create new folder to hold templates \
 `mkdir song_tracker_project/song_tracker_app/templates/song_tracker_app` (is a little weird but thats the best structure to not confuse django) \
+
+
 create new `index.html` file
