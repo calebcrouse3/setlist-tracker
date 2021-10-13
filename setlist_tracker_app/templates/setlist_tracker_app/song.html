@@ -1,0 +1,15 @@
+{% extends "setlist_tracker_app/base.html" %}
+
+{% block content %}
+<p>{{song}}</p>
+
+<ul>
+  {% for link in links %}
+  <li>
+    <p>{{link}}</p>
+  </li>
+  {% empty %}
+  <li>No links added yet.</li>
+  {% endfor %}
+</ul>
+{% endblock content %}

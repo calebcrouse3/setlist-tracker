@@ -1,0 +1,13 @@
+{% extends "setlist_tracker_app/base.html" %}
+
+{% block content %}
+<ul>
+  {% for song in songs %}
+  <li>
+    <a href="{% url 'setlist_tracker_app:song' song.id %}">{{song}}</a>
+  </li>
+  {% empty %}
+  <li>No songs added yet.</li>
+  {% endfor %}
+</ul>
+{% endblock content %}

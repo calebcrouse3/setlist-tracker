@@ -19,11 +19,16 @@ class Link(models.Model):
     url = models.URLField(max_length=200)
     PERFORMANCE = "P"
     TUTORIAL = "T" 
+    # add a map from literall to string for pretty printing
+    TYPE_MAP = {
+        PERFORMANCE: "Performance",
+        TUTORIAL: "Tutorial",
+    }
     TYPE_CHOICES = [
         (PERFORMANCE, "Performance"),
         (TUTORIAL, "Tutorial"),
     ]
-    type = models.CharField(
+    link_type = models.CharField(
         max_length=2,
         choices=TYPE_CHOICES,
         default=PERFORMANCE,
@@ -31,4 +36,4 @@ class Link(models.Model):
     data_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.name} {self.type}"
+        return f"{self.name} - {self.TYPE_MAP[self.link_type]}"
