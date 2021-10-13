@@ -73,11 +73,11 @@ urlpatterns = [
 create `urls.py` in song_tracker_app and add home page url pattern \
 
 
-create new function in `song_tracker_app/views.py` to map url patterns to functions and templates \
+create new function in `setlist_tracker_app/views.py` to map url patterns to functions and templates \
 
 
 create new folder to hold templates \
-`mkdir song_tracker_project/song_tracker_app/templates/song_tracker_app` (is a little weird but thats the best structure to not confuse django) \
+`mkdir setlist_tracker/setlist_tracker_app/templates/setlist_tracker_app` (is a little weird but thats the best structure to not confuse django) \
 
 
 create new `index.html` file
