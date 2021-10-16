@@ -9,5 +9,8 @@
   {% empty %}
   <li>No songs added yet.</li>
   {% endfor %}
+  <li>
+    <a href="{% url 'setlist_tracker_app:new_song' %}">Add a new song</a>
+  </li>
 </ul>
 {% endblock content %}

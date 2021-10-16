@@ -81,3 +81,14 @@ create new folder to hold templates \
 
 
 create new `index.html` file
+
+create more hmtl files to view data on different pages
+
+now we need to provide ways for user to enter their own data using forms
+
+create new folder `setlist_tracker_app/forms.py`
+
+user djangos `forms.ModelForm` to automatically create forms from your defined models
+
+create pages for deleting dating
+

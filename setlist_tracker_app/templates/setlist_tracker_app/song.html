@@ -6,10 +6,16 @@
 <ul>
   {% for link in links %}
   <li>
-    <p>{{link}}</p>
+    <p>{{link}} : <a href="{% url 'setlist_tracker_app:delete_link' song_id=song.id link_id=link.id %}">delete</a></p>
   </li>
   {% empty %}
   <li>No links added yet.</li>
   {% endfor %}
+  <li>
+    <a href="{% url 'setlist_tracker_app:new_link' song.id %}">Add a new link</a>
+  </li>
 </ul>
+
+<a href="{% url 'setlist_tracker_app:delete_song' song.id %}">Delete this song</a>
+
 {% endblock content %}
