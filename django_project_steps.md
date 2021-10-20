@@ -90,5 +90,49 @@ create new folder `setlist_tracker_app/forms.py`
 
 user djangos `forms.ModelForm` to automatically create forms from your defined models
 
-create pages for deleting dating
+create pages for deleting and editing songs and links
 
+create new app for managing users  \ 
+`python manage.py startapp users`
+
+add `users` app to `settings.py`
+
+include urls from `users` in url settings
+
+add out of the box django user management urls to users/urls.py \
+`django.contrib.auth.urls`
+
+add folder `users/templates/registration`
+
+add `login.html`
+
+add login link to `base.html` with optional messaged based on authentication status
+
+add logout link to `base.html`
+
+add `logged_out.html` confirmation page
+
+add `registration` url, view, and html
+
+add `@login_required` decorator to any function which should require a login
+
+add code to bottom of `settings` to redirect to login page whenever a non logged in user tries to access a restriced page
+```
+# My settings
+LOGIN_URL = 'users:login'
+```
+add user field to song model
+
+make migration on data base, will need to give a filler value for `owner` for the currently existing data \
+`python manage.py makemigrations learning_logs`
+
+run migrations \
+`python manage.py migrate`
+
+edit songs view so that it only retrieves results for the current user
+
+add owner checks to make sure users dont manually enter urls that should not be accessible to them for any necessary views \
+songs, edit_link, etc \
+`raise Http404`
+
+edit new_song view so that it assigns the current loged in user to the new song object

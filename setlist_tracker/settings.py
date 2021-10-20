@@ -34,6 +34,7 @@ INSTALLED_APPS = [
 
     # my apps
     'setlist_tracker_app',
+    'users',
 
     # default apps
     'django.contrib.admin',
@@ -128,3 +129,7 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# My settings
+LOGIN_URL = 'users:login'
