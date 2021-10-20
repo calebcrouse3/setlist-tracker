@@ -59,10 +59,29 @@ def new_link(request, song_id):
     return render(request, 'setlist_tracker_app/new_link.html', context)
 
 
+def edit_link(request, link_id):
+    """Use to edit an existing link"""
+    link = Link.objects.get(id=link_id)
+    song = link.song
+
+    if request.method != 'POST':
+        form = LinkForm(instance=link)
+    else:
+        form = LinkForm(instance=link, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('setlist_tracker_app:song', song_id=song.id)
+
+    # Display a blank or invalid form.
+    context = {'link': link, 'song': song, 'form': form}
+    return render(request, 'setlist_tracker_app/edit_link.html', context)
+
+
 def delete_song(request, song_id):
     # delete the song
     Song.objects.get(id=song_id).delete()
     return redirect('setlist_tracker_app:songs')
+
 
 def delete_link(request, song_id, link_id):
     # delete the song

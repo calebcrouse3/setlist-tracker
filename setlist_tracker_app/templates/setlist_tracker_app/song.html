@@ -6,8 +6,13 @@
 <ul>
   {% for link in links %}
   <li>
-    <p>{{link}} : <a href="{% url 'setlist_tracker_app:delete_link' song_id=song.id link_id=link.id %}">delete</a></p>
+    <p>{{link}}</p>
   </li>
+  <p>
+    <a href="{{link.url}}" target="_blank">open</a>&ensp;---&ensp;
+    <a href="{% url 'setlist_tracker_app:edit_link' link.id %}">edit</a>&ensp;---&ensp;
+    <a href="{% url 'setlist_tracker_app:delete_link' song_id=song.id link_id=link.id %}">delete</a>
+  </p>
   {% empty %}
   <li>No links added yet.</li>
   {% endfor %}

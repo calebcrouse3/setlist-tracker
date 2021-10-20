@@ -1,0 +1,12 @@
+{% extends "setlist_tracker_app/base.html" %}
+
+{% block content %}
+<p>Edit link for {{song}}:</p>
+
+<form action="{% url 'setlist_tracker_app:edit_link' link.id %}" method='post'>
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button name="submit">Confirm Changes</button>
+</form>
+
+{% endblock content %}

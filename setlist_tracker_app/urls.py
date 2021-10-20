@@ -20,4 +20,6 @@ urlpatterns = [
     path('new_link/<int:song_id>/', views.new_link, name='new_link'),
     # delete existing link
     path('delete_link/<int:song_id>/<int:link_id>/', views.delete_link, name='delete_link'),
+    # edit existing link
+    path('edit_link/<int:link_id>/', views.edit_link, name='edit_link'),
 ]
