@@ -1,6 +1,13 @@
-
 {% extends "setlist_tracker_app/base.html" %}
 
-{% block content %}
-<p>Welcome to your setlist tracker! Add songs you can perform along with helpful links.</p>
-{% endblock content %}
+{% block page_header %}
+<div class="jumbotron">
+  <h1 class="display-3">Build your Setlist.</h1>
+
+  <p class="lead">Keep track of your go to performance songs, or any songs youd like
+    to learn and practice. Build lists of performances and tutorials for every song in your
+    setlist.</p>
+
+  <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}" role="button">Register &raquo;</a>
+</div>
+{% endblock page_header %}

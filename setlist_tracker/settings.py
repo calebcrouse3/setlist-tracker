@@ -36,6 +36,9 @@ INSTALLED_APPS = [
     'setlist_tracker_app',
     'users',
 
+    # third party apps
+    'bootstrap4',
+
     # default apps
     'django.contrib.admin',
     'django.contrib.auth',

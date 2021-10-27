@@ -1,26 +1,32 @@
 {% extends "setlist_tracker_app/base.html" %}
 
+{% block page_header %}
+<h1>Your Songs</h1>
+{% endblock page_header %}
+
+
+
 {% block content %}
 <p>{{song}}</p>
 
 <ul>
   {% for link in links %}
-  <li>
+  <li><h3>
     <p>{{link}}</p>
-  </li>
+  </h3></li>
   <p>
     <a href="{{link.url}}" target="_blank">open</a>&ensp;---&ensp;
     <a href="{% url 'setlist_tracker_app:edit_link' link.id %}">edit</a>&ensp;---&ensp;
     <a href="{% url 'setlist_tracker_app:delete_link' song_id=song.id link_id=link.id %}">delete</a>
   </p>
   {% empty %}
-  <li>No links added yet.</li>
+  <li><h3>No links added yet.</h3></li>
   {% endfor %}
-  <li>
+  <li><h3>
     <a href="{% url 'setlist_tracker_app:new_link' song.id %}">Add a new link</a>
-  </li>
+  </h3></li>
 </ul>
 
-<a href="{% url 'setlist_tracker_app:delete_song' song.id %}">Delete this song</a>
+<h3><a href="{% url 'setlist_tracker_app:delete_song' song.id %}">Delete this song</a></h3>
 
 {% endblock content %}

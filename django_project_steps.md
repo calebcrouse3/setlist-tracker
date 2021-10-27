@@ -136,3 +136,8 @@ songs, edit_link, etc \
 `raise Http404`
 
 edit new_song view so that it assigns the current loged in user to the new song object
+
+pip install django-bootstrap4
+
+add bootstrap4 to apps in settings
+
