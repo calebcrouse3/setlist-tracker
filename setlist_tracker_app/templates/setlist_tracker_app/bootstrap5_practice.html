@@ -1,0 +1,50 @@
+{% load bootstrap5 %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1,
+       shrink-to-fit=yes">
+  <title>Practice Bootstrap HTML</title>
+
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+
+</head>
+
+<body>
+
+
+  <!-- {% block content %}. -->
+
+  <form action="{% url 'setlist_tracker_app:new_song' %}" method="post" class="form">
+    {% csrf_token %}
+    {% bootstrap_form song_form %}
+    {% buttons %}
+    <button type="submit" class="btn btn-primary">
+      Submit
+    </button>
+    {% endbuttons %}
+  </form>
+
+  <!-- Space. -->
+
+  <h1>List of items from context</h1>
+
+  <ul>
+    {% for number in my_list %}
+    <li>
+      <h3>
+        <p>{{number}}</p>
+      </h3>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <!-- {% endblock content %}. -->
+
+</body>
+
+</html>

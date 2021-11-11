@@ -22,4 +22,7 @@ urlpatterns = [
     path('delete_link/<int:song_id>/<int:link_id>/', views.delete_link, name='delete_link'),
     # edit existing link
     path('edit_link/<int:link_id>/', views.edit_link, name='edit_link'),
+    # practice space for django templates
+    path('bootstrap5_practice/', views.bootstrap5_practice, name='bootstrap5_practice'),
+
 ]

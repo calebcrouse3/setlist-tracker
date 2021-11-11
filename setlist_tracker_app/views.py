@@ -105,3 +105,14 @@ def delete_link(request, song_id, link_id):
     # delete the song
     Link.objects.get(id=link_id).delete()
     return redirect('setlist_tracker_app:song', song_id=song_id)
+
+def bootstrap5_practice(request):
+    # make fake data here to practice rendering in a template
+    my_list = [1, 2, 3, 4, 5]
+
+    # test song form
+    if request.method != 'POST':
+        song_form = SongForm()
+
+    context = {"my_list": my_list, "song_form": song_form}
+    return render(request, 'setlist_tracker_app/bootstrap5_practice.html', context)
